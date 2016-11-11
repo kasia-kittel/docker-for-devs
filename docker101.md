@@ -21,12 +21,12 @@ Docker compose serves to start multicontainer applications.
 
 ### Docker Daemon
 The heart of the platform is Docker daemon that is wrapped in REST API.
-We have a command line client that I will be using later during this presentation.
-Recently also a GUI has been created called Kitematic. Currently it is in beta version.
+We can communicate with Docker Daemon via command line tool and, recently, vial GUI
+Kitematic.
 
 ## More about Images
 
-__Base image__ is an images that contains the root filesystem and may also contain tools like shells, compilers or libraries. In some cases a base image has everything needed to run particular application.
+__Base image__ is an image that contain the root filesystem and may also contain tools like shells, compilers or libraries. In some cases a base image has everything needed to run particular application (i.e. MongoDB)
 
 To create our own images we have two choices:
 * ```docker commit``` - first you run base image in interactive mode and install and configure whatever you container needs. Once your container is ready you call *commit* on it.
@@ -35,11 +35,11 @@ To create our own images we have two choices:
   * they can be later referenced in Dockerfile
 
 Docker will search for *Dockerfile* at the root of the context.
-Most of the time anyway you will build your images from Dockerfile using *build* tool
+Most of the time we build images from Dockerfile using *build* tool.
 
 __Dockerfile__ is a set of instructions describing what files should be included in the image filesystem and what processes should be started with container.
 
-The most important iInstruction are:
+The most important instructions are:
 * __FROM__ 	- defines base image
 * __COPY [src] [dest]__ - copy files from context to the container
 * __RUN__ - run instruction inside the container
@@ -59,9 +59,9 @@ To run a container: `docker run [options] image:tag`
 __Options:__
 * __-d__ - detached
 * __-t__ - allocate pseudo tty
-* __-i__ -  keep STDIN open
+* __-i__ - keep STDIN open
 * __-w__ - set up working dir
-* __-v__ - mound volume
+* __-v__ - mount volume
 * __--link [container_name:alias]__ - link container to another container
 * __--p [hostport:containerport]__ - map container port to host port 
 * __--name [name]__ - name the container
