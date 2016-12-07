@@ -1,0 +1,8 @@
+GET     /                         controllers.YourCarmaController.index
+POST    /                         controllers.YourCarmaController.index
+
+GET     /setup                    controllers.YourCarmaController.showForm
+POST    /setup                    controllers.YourCarmaController.setup
+
+GET     /img/*file                controllers.Assets.at(path="/public/img", file)
+GET     /bootstrap/*file          controllers.Assets.at(path="/public/bootstrap", file)

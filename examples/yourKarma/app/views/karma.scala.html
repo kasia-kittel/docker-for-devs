@@ -1,0 +1,11 @@
+@import connectors.Quote
+@(ln: String, quote: Quote)
+
+@main(title = "Your Karma") {
+    <h2 class="cover-heading">Today you lucky number is:</h2>
+    <h1 class="luckynumber">@ln</h1>
+    <blockquote>
+        </p>@quote.text</p>
+        <footer><cite title="Source">@quote.author</cite></footer>
+    </blockquote>
+}

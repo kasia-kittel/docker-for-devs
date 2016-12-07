@@ -1,0 +1,32 @@
+mongo:
+    image: mongo:3.0.6
+    expose:
+        - "27017"
+qotd:
+    image: quoteoftheday:latest
+    command:
+      -Dhttp.port=8081
+      -Dplay.crypto.secret=abcdefghijk
+    expose:
+      - "8081"
+    ports:
+      - "8081:8081"
+    links:
+        - mongo
+yln:
+    image: yln:latest
+    ports:
+      - "8080:8080"
+yk:
+    image: yourkarma:latest
+    command:
+      -Dplay.crypto.secret=abcdefghijk
+      -Dyln.url=http://yln:8080/number
+      -Dqotd.url=http://qotd:8081/quote
+    expose:
+      - "9000"
+    ports:
+      - "9000:9000"
+    links:
+      - yln
+      - qotd

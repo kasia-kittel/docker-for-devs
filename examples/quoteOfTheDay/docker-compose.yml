@@ -1,0 +1,14 @@
+mongo:
+    image: mongo:latest
+    expose:
+        - "27017"
+qotd-test:
+    image: "1science/sbt:latest"
+    command: sbt clean dct:test
+    volumes:
+        - "$PWD/:/app:rw"
+        - "$HOME/.m2:/root/.m2:rw"
+        - "$HOME/.ivy2:/root/.ivy2:rw"
+    links:
+        - mongo
+    stdin_open: true

@@ -1,0 +1,2 @@
+GET     /quote                          controllers.QuoteController.getQuoteForSomebody(somebody: models.Somebody)
+GET     /quotes                         controllers.QuoteController.getQuotes

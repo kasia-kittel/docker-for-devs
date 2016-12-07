@@ -1,0 +1,5 @@
+Quote of the Day
+=================================
+
+Very simple Scala Play 2.5 micro-service with Reactivemongo.
+This is only an example how to build a micro-service as Docker image.

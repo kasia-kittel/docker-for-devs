@@ -1,0 +1,14 @@
+@(userForm: Form[UserData])(implicit messages: Messages)
+
+@main(title = "Your Karma - insert your details") {
+
+    @helper.form(action = routes.YourCarmaController.setup()) {
+        @helper.inputText(userForm("name"))
+        @helper.inputText(userForm("dateOfBirth"),
+            '_format -> "dd-MM-yyyy",
+            '_showConstraints -> false,
+            '_help -> "Use format: dd-MM-yyyy"
+        )
+        <input type = "submit" value="Submit" />
+    }
+}
