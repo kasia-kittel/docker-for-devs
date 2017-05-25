@@ -1,8 +1,8 @@
-#QuoteOfTheDay - demo
+# QuoteOfTheDay - demo
 
 
 
-##Intro
+## Intro
 
 _QuoteOfTheDay_ is a little sample service that returns a smart quote for a given pair of name and age. The purpose of this application to go along with "Docker for dev" tutorials/talks.
 
