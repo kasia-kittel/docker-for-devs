@@ -6,7 +6,7 @@
 
 _QuoteOfTheDay_ is a little sample service that returns a smart quote for a given pair of name and age. The purpose of this application to go along with "Docker for dev" tutorials/talks.
 
-##API
+## API
 1. `/quotes` returns all quotes stored in the microservice
 
 ```javascript
@@ -29,7 +29,6 @@ _QuoteOfTheDay_ is a little sample service that returns a smart quote for a give
   "text": "Whatever the mind of man can conceive and believe, it can achieve.",
   "author": "Napoleon Hill"
 }
-
 ```
 
 This service uses MongoDB to store quotes.
@@ -55,7 +54,7 @@ Let's try to pass missing *_play.crypto.secret_* config to the container:
 Looks good, the application starts, but we can not access it. We still need to expose application's port and map it to host port:
 `docker run --expose=9000 -p:9000:9000 quoteoftheday:0.9-SNAPSHOT -Dplay.crypto.secret=abcdefghijk`
 
-Now everything works just fine. We can assess the application on Docker default machine IP or localhost (port 9000) depending on our local Docker setup.
+Now everything works just fine. We can access the application on Docker default machine IP or localhost (port 9000) depending on our local Docker setup.
 
 Since the generated _Dockerfile_ is very basic it may be interesting to explore how we could adjust it to our needs. It would be also useful to reduce the number of _docker run_ parameters. All customization code should be added to _build.sbt_ : (We need to run `sbt docker:publishLocal` after every change to regenerate the _Dockerfile_.)
 

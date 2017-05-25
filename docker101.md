@@ -23,8 +23,7 @@ Docker compose serves to start multicontainer applications.
 
 ### Docker Daemon
 The heart of the platform is Docker daemon that is wrapped in REST API.
-We can communicate with Docker Daemon via command line tool and, recently, vial GUI
-Kitematic.
+We can communicate with Docker Daemon via command line tool and, recently, vial GUI - Kitematic.
 
 ## More about Images
 
@@ -43,7 +42,7 @@ __Dockerfile__ is a set of instructions describing what files should be included
 
 The most important instructions are:
 * __FROM__ 	- defines base image
-* __COPY [src] [dest]__ - copy files from context to the container
+* __COPY <src> <dest>__ - copy files from context to the container
 * __RUN__ - run instruction inside the container
 * __EXPOSE__ - inform Docker that this container listens on given port
 * __CMD__ - execute a command when a container is started
@@ -51,7 +50,7 @@ The most important instructions are:
 
 ### Useful commands
 
-* `docker images` - list images local images
+* `docker images` - list local images
 * `docker rmi [img_id]` - remove image
 
 ## More about containers
