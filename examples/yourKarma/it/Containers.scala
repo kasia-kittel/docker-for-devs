@@ -8,7 +8,7 @@ trait Containers extends DockerKit {
 
   val mongodbContainer = DockerContainer("mongo:3.0.6", Some(mongodbContainerName))
     .withPorts(mongodbPort -> Some(mongodbPort))
-    .withReadyChecker(DockerReadyChecker.LogLineContains("waiting for connections on port"))
+    .withReadyChecker(DockerReadyChecker.LogLineContains("waiting for connections on port")) //condition
 
   val qotdPort = 8081
 

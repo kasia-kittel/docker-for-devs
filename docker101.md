@@ -86,7 +86,7 @@ Any Image we want to push to Docker Hub must be tagged with username. For exampl
 
 Docker compose serves to run a set of services that makes an application in an isolated environment. All services definitions are placed in _docker-compose.yml_, where we define how all participating containers should be run and connected. (Similar like passing parameters to docker run command.)
 [https://docs.docker.com/compose/overview/](More features of Docker Compose).
- 
+
 ### docker-compose.yml
 The most important entries are listed below.
 

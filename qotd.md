@@ -91,7 +91,7 @@ dockerCommands := dockerCommands.value.flatMap{
 
  Then we need to start MongoDB as named container that will facilitate linking to it later: 
 
-`docker run --rm --name mongo_for_qotd mongo`
+`docker run --name mongo_for_qotd mongo`
 
 Finally we can start container with our service: 
 

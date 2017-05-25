@@ -36,23 +36,23 @@ libraryDependencies ++= Seq(
 
 
 /**** test config for docker-it-scala demonstrating isolation and parallelism*/
-//lazy val DockerItScalaTestNIso = config("niso") extend(Test)
-//lazy val DockerItScalaTestIso = config("iso") extend(Test)
-//
-//lazy val root = (project in file(".")).enablePlugins(PlayScala)
-//  .configs(DockerItScalaTestNIso)
-//    // fork=true and parallelExecution=true are necessary to run test suites in parallel
-//    //.settings(fork in DockerItScalaTestNIso := false)
-//    //.settings(parallelExecution in DockerItScalaTestNIso := true)
-//    .settings(inConfig(DockerItScalaTestNIso)(Defaults.testTasks): _*)
-//    .settings(unmanagedSourceDirectories in Test := Seq(baseDirectory.value  / "iso") )
-//    .settings(testOptions in DockerItScalaTestNIso := Seq(Tests.Filter(s => s.startsWith("NotIsolated"))))
-//  .configs(DockerItScalaTestIso)
-//    .settings(fork in DockerItScalaTestIso := false)
-//    .settings(parallelExecution in DockerItScalaTestIso := true)
-//    .settings(inConfig(DockerItScalaTestIso)(Defaults.testTasks): _*)
-//    .settings(unmanagedSourceDirectories in Test := Seq(baseDirectory.value  / "iso") )
-//    .settings(testOptions in DockerItScalaTestIso := Seq(Tests.Filter(s => s.startsWith("Isolated"))))
+lazy val DockerItScalaTestNIso = config("niso") extend(Test)
+lazy val DockerItScalaTestIso = config("iso") extend(Test)
+
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+  .configs(DockerItScalaTestNIso)
+    // fork=true and parallelExecution=true are necessary to run test suites in parallel
+    //.settings(fork in DockerItScalaTestNIso := false)
+    //.settings(parallelExecution in DockerItScalaTestNIso := true)
+    .settings(inConfig(DockerItScalaTestNIso)(Defaults.testTasks): _*)
+    .settings(unmanagedSourceDirectories in Test := Seq(baseDirectory.value  / "iso") )
+    .settings(testOptions in DockerItScalaTestNIso := Seq(Tests.Filter(s => s.startsWith("NotIsolated"))))
+  .configs(DockerItScalaTestIso)
+    .settings(fork in DockerItScalaTestIso := false)
+    .settings(parallelExecution in DockerItScalaTestIso := true)
+    .settings(inConfig(DockerItScalaTestIso)(Defaults.testTasks): _*)
+    .settings(unmanagedSourceDirectories in Test := Seq(baseDirectory.value  / "iso") )
+    .settings(testOptions in DockerItScalaTestIso := Seq(Tests.Filter(s => s.startsWith("Isolated"))))
 
 logBuffered in Test := false
 

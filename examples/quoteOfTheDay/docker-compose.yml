@@ -4,7 +4,7 @@ mongo:
         - "27017"
 qotd-test:
     image: "1science/sbt:latest"
-    command: sbt clean dct:test
+    command: sbt dct:test
     volumes:
         - "$PWD/:/app:rw"
         - "$HOME/.m2:/root/.m2:rw"
